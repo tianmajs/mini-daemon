@@ -1,0 +1,27 @@
+{
+	"name": "mini-daemon",
+	"description": "NodeJS background process manager",
+	"version": "1.0.0-b1",
+	"author": "Nanqiao Deng <nqdeng@gmail.com>",
+	"keywords": [
+		"daemon",
+		"background",
+		"process"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/tianmajs/mini-daemon.git"
+	},
+	"license": "MIT",
+	"devDependencies": {
+	    "mocha": "~1.18.2",
+	    "supertest": "~0.15.0"
+  	},
+	"engines": {
+		"node": ">=0.10.0"
+	},
+	"main": "index.js",
+	"scripts": {
+		"test": "mocha --harmony"
+	}
+}
