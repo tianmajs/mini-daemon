@@ -1,7 +1,5 @@
 # mini-daemon
 
-![build status](https://travis-ci.org/tianmajs/tianma-mount.svg?branch=master)
-
 NodeJS background process manager.
 
 ## Install
