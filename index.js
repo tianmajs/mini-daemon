@@ -16,11 +16,11 @@ function isRunning(callback) {
 
     if (fs.existsSync('.running')) {
         stats = JSON.parse(fs.readFileSync('.running', 'utf8'));
-        
+
         cmd = util.format(process.platform === 'win32' ?
     		'tasklist /fi "PID eq %s" | findstr /i "%s"' :
     		'ps -f -p %s | grep "%s"', stats.pid, path.basename(PATH_NODE));
-            
+
 		cp.exec(cmd, function (err, stdout, stderr) {
 			if (err || stdout.toString().trim() === '') {
 				callback(null);
@@ -43,11 +43,11 @@ function start(options, callback) {
 		if (stats) {
 			return callback(new Error('Service is running!'));
 		}
-        
+
         if (typeof options === 'string') {
             options = { filename: options };
         }
-        
+
         var args = (options.flags || [])
             .concat(options.filename)
             .concat(options.args || []);
@@ -56,14 +56,14 @@ function start(options, callback) {
 			detached: true,
 			stdio: [ 'ignore', 'ignore', 'ignore' ]
 		});
-		
+
         var handle = setTimeout(function () {
             options.pid = child.pid;
             fs.writeFileSync('.running', JSON.stringify(options));
 			child.unref();
 			callback(null);
         }, 3000);
-        
+
 		child.on('exit', function (code) {
 			clearTimeout(handle);
 			if (code !== 0) {

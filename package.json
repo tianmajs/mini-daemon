@@ -1,7 +1,7 @@
 {
 	"name": "mini-daemon",
 	"description": "NodeJS background process manager",
-	"version": "1.0.0-b1",
+	"version": "1.0.0-b2",
 	"author": "Nanqiao Deng <nqdeng@gmail.com>",
 	"keywords": [
 		"daemon",
@@ -14,13 +14,15 @@
 	},
 	"license": "MIT",
 	"devDependencies": {
-	    "mocha": "~1.18.2",
-	    "supertest": "~0.15.0"
+	    "mocha": "~1.18.2"
   	},
 	"engines": {
 		"node": ">=0.10.0"
 	},
 	"main": "index.js",
+    "bin": {
+        "daemon": "./bin/daemon.js"
+    },
 	"scripts": {
 		"test": "mocha --harmony"
 	}
