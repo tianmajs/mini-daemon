@@ -13,7 +13,7 @@ function parse(argv) {
     var tmp = options.flags;
 
     while (part = argv.shift()) {
-        if (part[0] === '-') {
+        if (part[0] === '-' || options.filename) {
             tmp.push(part);
         } else {
             options.filename = part;

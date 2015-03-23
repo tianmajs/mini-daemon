@@ -1,7 +1,7 @@
 {
 	"name": "mini-daemon",
 	"description": "NodeJS background process manager",
-	"version": "1.0.0-b2",
+	"version": "1.0.0-b3",
 	"author": "Nanqiao Deng <nqdeng@gmail.com>",
 	"keywords": [
 		"daemon",
