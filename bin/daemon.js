@@ -32,7 +32,7 @@ function main(argv) {
     case 'start':
         daemon.start(options, function (err) {
             if (err) {
-                console.log('ERROR: %s', err.message);
+                console.error('ERROR: %s', err.message);
             } else {
                 console.log('Service started.');
             }
@@ -41,7 +41,7 @@ function main(argv) {
     case 'stop':
         daemon.stop(function (err) {
             if (err) {
-                console.log('ERROR: %s', err.message);
+                console.error('ERROR: %s', err.message);
             } else {
                 console.log('Service stopped.');
             }
@@ -50,7 +50,7 @@ function main(argv) {
     case 'restart':
         daemon.restart(function (err) {
             if (err) {
-                console.log('ERROR: %s', err.message);
+                console.error('ERROR: %s', err.message);
             } else {
                 console.log('Service restarted.');
             }
